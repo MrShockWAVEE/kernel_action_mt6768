@@ -167,7 +167,7 @@ jobs:
         ❯ cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel                                                                                              
         ❯ curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next         
         ❯ cd KernelSU-Next/                    
-        ❯ curl -o 0001-Kernel-Implement-SUSFS-v1.5.3.patch https://github.com/sidex15/KernelSU-Next/commit/1e750de25930e875612bbec0410de0088474c00b.patch
+        ❯ curl -o 0001-Kernel-Implement-SUSFS-v1.5.3.patch | "https://github.com/sidex15/KernelSU-Next/commit/1e750de25930e875612bbec0410de0088474c00b.patch"
         ❯ patch -p1 < 0001-Kernel-Implement-SUSFS-v1.5.3.patch
         ❯ git clone https://gitlab.com/simonpunk/susfs4ksu.git -b kernel-4.14
         ❯ cp -v susfs4ksu/kernel_patches/fs/* fs
