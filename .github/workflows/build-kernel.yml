@@ -166,7 +166,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         
-        curl -LSs "https://raw.githubusercontent.com/MrShockWAVEE/android_kernel_xiaomi_mt6768/kernel-tree-wip2/KernelSU-Next/kernel/setup.sh" | bash -
+        curl -LSs "https://raw.githubusercontent.com/MrShockWAVEE/kernel_xiaomi_mt6768/Ironhide/KernelSU-Next/kernel/setup.sh" | bash -
         KSU_VERSION=$(cd KernelSU-Next && expr $(/usr/bin/git rev-list --count HEAD) + 10200)
 
         echo "KSUVER=$KSU_VERSION" >> $GITHUB_ENV
