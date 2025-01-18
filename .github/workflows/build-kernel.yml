@@ -169,7 +169,7 @@ jobs:
         git clone https://github.com/MrShockWAVEE/KernelSU-Next.git
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel/kernelSU-Next
         bash KernelSU-Next/kernel/setup.sh
-        patch -p1 <SuSFS-new.patch
+        patch -p1 < SuSFS-new.patch
         
         echo "KSUVER=$KSU_VERSION" >> $GITHUB_ENV
 
