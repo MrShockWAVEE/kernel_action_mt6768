@@ -165,10 +165,12 @@ jobs:
       if: env.ENABLE_KERNELSU == 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        
-        curl -LSs "https://raw.githubusercontent.com/MrShockWAVEE/android_kernel_xiaomi_mt6768/kernel-tree-wip2/KernelSU-Next/kernel/setup.sh" | bash -
+         
+        curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next
         KSU_VERSION=$(cd KernelSU-Next && expr $(/usr/bin/git rev-list --count HEAD) + 10200)
-
+        cd KernelSU-Next/
+        git apply $GITHUB_WORKSPACE/patches/SuSFS-new.patch
+        
         echo "KSUVER=$KSU_VERSION" >> $GITHUB_ENV
 
     - name: Setup Configuration for Kernel
