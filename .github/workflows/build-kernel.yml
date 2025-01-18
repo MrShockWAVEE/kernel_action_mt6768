@@ -165,10 +165,8 @@ jobs:
       if: env.ENABLE_KERNELSU == 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-
-        git clone "https://github.com/MrShockWAVEE/KernelSU-Next.git"
         
-        curl -LSs "https://raw.githubusercontent.com/MrShockWAVEE/android_kernel_xiaomi_mt6768/kernel-tree/KernelSU-Next/kernel/setup.sh" | bash -
+        curl -LSs "https://raw.githubusercontent.com/MrShockWAVEE/KernelSU-Next/refs/heads/next/kernel/setup.sh" | bash -
         KSU_VERSION=$(cd KernelSU-Next && expr $(/usr/bin/git rev-list --count HEAD) + 10200)
         
 
