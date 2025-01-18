@@ -166,11 +166,11 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         
-        curl -LSs "https://raw.githubusercontent.com/MrShockWAVEE/KernelSU-Next/next-susfs/kernel/setup.sh" | bash -
+        curl -LSs "https://raw.githubusercontent.com/MrShockWAVEE/KernelSU-Next/next/kernel/setup.sh" | bash -
         KSU_VERSION=$(cd KernelSU-Next && expr $(/usr/bin/git rev-list --count HEAD) + 10200)
 
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel/kernelSU-Next
-        patch -p1 <SuSFS.patch
+        patch -p1 <SuSFS-new.patch
         
         echo "KSUVER=$KSU_VERSION" >> $GITHUB_ENV
 
