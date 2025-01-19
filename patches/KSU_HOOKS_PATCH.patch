@@ -54,7 +54,6 @@ index ae0a49517ba9..152671d7c088 100644
  	return ret;
  }
  
-+// KernelSU hook
 +#ifdef CONFIG_KSU
 +extern int ksu_handle_execveat(int *fd, struct filename **filename_ptr, void *argv,
 +			       void *envp, int *flags);
@@ -142,7 +141,6 @@ index 3b62683fe332..09d38e67288e 100644
  	return error;
  }
  
-+// KernelSU hook
 +#ifdef CONFIG_KSU
 +extern int ksu_handle_faccessat(int *dfd, const char __user **filename_user, int *mode,
 +			        int *flags);
@@ -170,7 +168,6 @@ index 0da6e4f19d7f..50fe43936953 100644
  }
  EXPORT_SYMBOL(kernel_read);
  
-+// KernelSU hook
 +#ifdef CONFIG_KSU
 +extern int ksu_handle_vfs_read(struct file **file_ptr, char __user **buf_ptr,
 +			       size_t *count_ptr, loff_t **pos);
